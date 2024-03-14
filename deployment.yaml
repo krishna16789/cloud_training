@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-training-new
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: cloud-training-new
+          image: 730335206386.dkr.ecr.ap-south-1.amazonaws.com/cloud_training:latest1
+          ports:
+            - containerPort: 5000

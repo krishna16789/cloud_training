@@ -1,4 +1,5 @@
-FROM python:3.9.2
+#!/bin/bash
+FROM --platform=linux/amd64 python:3.8-slim-buster as build
 
 WORKDIR python-docker
 
